@@ -29,8 +29,8 @@ The plugin:
   - `velocity` (rad/s)
 - On activate, opens serial communication to ESP32.
 - On read, parses encoder ticks and computes:
-  - $position = ticks \times rad\_per\_count$
-  - $velocity = \frac{position - previous\_position}{dt}$
+  - `position_rad = ticks * rad_per_count`
+  - `velocity_rad_s = (position_rad - previous_position_rad) / dt_s`
 - On write, converts wheel command from rad/s to rev/s and sends `CMD_VEL <left> <right>`.
 
 ## ESP32 Firmware Behavior
